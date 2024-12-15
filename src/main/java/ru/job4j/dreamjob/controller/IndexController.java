@@ -1,13 +1,11 @@
 package ru.job4j.dreamjob.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-@Controller
-@SuppressWarnings("unused")
+import org.springframework.web.bind.annotation.RestController;
+@RestController
 public class IndexController {
     @GetMapping("/index")
     public String getIndex() {
-        return "index";
+        return "Hello World!";
     }
 }
