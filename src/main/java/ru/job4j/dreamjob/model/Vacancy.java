@@ -7,13 +7,13 @@ public class Vacancy {
     private int id;
     private String title;
     private String description;
-    private LocalDateTime createDate;
+    private LocalDateTime creationDate;
 
-    public Vacancy(int id, String title, String description, LocalDateTime createDate) {
+    public Vacancy(int id, String title, String description, LocalDateTime creationDate) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.createDate = createDate;
+        this.creationDate = creationDate;
     }
 
     public int getId() {
@@ -40,12 +40,12 @@ public class Vacancy {
         this.description = description;
     }
 
-    public LocalDateTime getCreateDate() {
-        return createDate;
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
-    public void setCreateDate(LocalDateTime createDate) {
-        this.createDate = createDate;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
     @Override
