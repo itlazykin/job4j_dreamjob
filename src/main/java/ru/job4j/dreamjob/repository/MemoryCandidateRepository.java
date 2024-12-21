@@ -8,7 +8,6 @@ import java.util.*;
 
 @Repository
 public class MemoryCandidateRepository implements CandidateRepository {
-    private static final MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
     private int nextId = 1;
     private final Map<Integer, Candidate> candidates = new HashMap<>();
 
@@ -19,10 +18,6 @@ public class MemoryCandidateRepository implements CandidateRepository {
         save(new Candidate(4, "Сергей Орлов", "Опыт работы 2 года"));
         save(new Candidate(5, "Идрак Мерзализаде", "Опыт работы 3 года"));
         save(new Candidate(6, "Артур Чапорян", "Без опыта"));
-    }
-
-    public static MemoryCandidateRepository getInstance() {
-        return INSTANCE;
     }
 
     @Override
