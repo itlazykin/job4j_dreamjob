@@ -18,17 +18,17 @@ public class MemoryVacancyRepository implements VacancyRepository {
 
     private MemoryVacancyRepository() {
         save(new Vacancy(
-                1, "Intern Java Developer", "Без опыта", true, 1));
+                1, "Intern Java Developer", "Без опыта", true, 1, 0));
         save(new Vacancy(
-                2, "Junior Java Developer", "Опыт 1 год", true, 2));
+                2, "Junior Java Developer", "Опыт 1 год", true, 2, 0));
         save(new Vacancy(
-                3, "Junior+ Java Developer", "Опыт 2 года", false, 3));
+                3, "Junior+ Java Developer", "Опыт 2 года", false, 3, 0));
         save(new Vacancy(
-                4, "Middle Java Developer", "Опыт 3 года", true, 1));
+                4, "Middle Java Developer", "Опыт 3 года", true, 1, 0));
         save(new Vacancy(
-                5, "Middle+ Java Developer", "Опыт 4 года", false, 2));
+                5, "Middle+ Java Developer", "Опыт 4 года", false, 2, 0));
         save(new Vacancy(
-                6, "Senior Java Developer", "Опыт 6 лет", true, 3));
+                6, "Senior Java Developer", "Опыт 6 лет", true, 3, 0));
     }
 
     @Override
@@ -51,7 +51,8 @@ public class MemoryVacancyRepository implements VacancyRepository {
                     vacancy.getTitle(),
                     vacancy.getDescription(),
                     vacancy.getVisible(),
-                    vacancy.getCityId()
+                    vacancy.getCityId(),
+                    vacancy.getFileId()
             )) != null;
     }
 
