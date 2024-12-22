@@ -17,12 +17,18 @@ public class MemoryVacancyRepository implements VacancyRepository {
     private final Map<Integer, Vacancy> vacancies = new HashMap<>();
 
     private MemoryVacancyRepository() {
-        save(new Vacancy(1, "Intern Java Developer", "Без опыта", true));
-        save(new Vacancy(2, "Junior Java Developer", "Опыт 1 год", true));
-        save(new Vacancy(3, "Junior+ Java Developer", "Опыт 2 года", true));
-        save(new Vacancy(4, "Middle Java Developer", "Опыт 3 года", true));
-        save(new Vacancy(5, "Middle+ Java Developer", "Опыт 4 года", true));
-        save(new Vacancy(6, "Senior Java Developer", "Опыт 6 лет", true));
+        save(new Vacancy(
+                1, "Intern Java Developer", "Без опыта", true, 1));
+        save(new Vacancy(
+                2, "Junior Java Developer", "Опыт 1 год", true, 2));
+        save(new Vacancy(
+                3, "Junior+ Java Developer", "Опыт 2 года", true, 3));
+        save(new Vacancy(
+                4, "Middle Java Developer", "Опыт 3 года", true, 1));
+        save(new Vacancy(
+                5, "Middle+ Java Developer", "Опыт 4 года", true, 2));
+        save(new Vacancy(
+                6, "Senior Java Developer", "Опыт 6 лет", true, 3));
     }
 
     @Override
@@ -39,14 +45,14 @@ public class MemoryVacancyRepository implements VacancyRepository {
 
     @Override
     public boolean update(Vacancy vacancy) {
-        return vacancies.computeIfPresent(vacancy.getId(),
-                (id, oldVacancy) -> {
-                    return new Vacancy(
-                            oldVacancy.getId(),
-                            vacancy.getTitle(),
-                            vacancy.getDescription(),
-                            vacancy.getVisible());
-                }) != null;
+        return vacancies.computeIfPresent(vacancy.getId(), (id, oldVacancy) ->
+            new Vacancy(
+                    oldVacancy.getId(),
+                    vacancy.getTitle(),
+                    vacancy.getDescription(),
+                    vacancy.getVisible(),
+                    vacancy.getCityId()
+            )) != null;
     }
 
     @Override
