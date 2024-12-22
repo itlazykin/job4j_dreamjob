@@ -22,11 +22,11 @@ public class MemoryVacancyRepository implements VacancyRepository {
         save(new Vacancy(
                 2, "Junior Java Developer", "Опыт 1 год", true, 2));
         save(new Vacancy(
-                3, "Junior+ Java Developer", "Опыт 2 года", true, 3));
+                3, "Junior+ Java Developer", "Опыт 2 года", false, 3));
         save(new Vacancy(
                 4, "Middle Java Developer", "Опыт 3 года", true, 1));
         save(new Vacancy(
-                5, "Middle+ Java Developer", "Опыт 4 года", true, 2));
+                5, "Middle+ Java Developer", "Опыт 4 года", false, 2));
         save(new Vacancy(
                 6, "Senior Java Developer", "Опыт 6 лет", true, 3));
     }
