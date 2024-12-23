@@ -24,11 +24,11 @@ public class Candidate {
     public Candidate() {
     }
 
-    public Candidate(int id, String name, String description, int cityId, int fileId) {
+    public Candidate(int id, String name, String description, LocalDateTime creationDate, int cityId, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
-        LocalDateTime.now();
+        this.creationDate = creationDate;
         this.cityId = cityId;
         this.fileId = fileId;
     }
