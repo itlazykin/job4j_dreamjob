@@ -5,7 +5,6 @@ import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.model.Vacancy;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 public class Sql2oCandidateRepository implements CandidateRepository {
@@ -19,7 +18,7 @@ public class Sql2oCandidateRepository implements CandidateRepository {
     public Candidate save(Candidate candidate) {
         try (var connection = sql2o.open()) {
             var sql = """
-                    INSERT INTO vacancies(name, description, creation_date, city_id, file_id)
+                    INSERT INTO candidates(name, description, creation_date, city_id, file_id)
                     VALUES (:name, :description, :creationDate, :cityId, :fileId)
                     """;
             var query = connection.createQuery(sql, true)
