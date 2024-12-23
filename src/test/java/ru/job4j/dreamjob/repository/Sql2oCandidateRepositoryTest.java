@@ -64,9 +64,9 @@ class Sql2oCandidateRepositoryTest {
     @Test
     public void whenSaveSeveralThenGetAll() {
         var creationDate = now().truncatedTo(ChronoUnit.MINUTES);
-        var candidate1 = sql2oCandidateRepository.save(new Candidate(0, "name1", "description1", creationDate, 1,file.getId()));
-        var candidate2 = sql2oCandidateRepository.save(new Candidate(0, "name2", "description2", creationDate, 1,file.getId()));
-        var candidate3 = sql2oCandidateRepository.save(new Candidate(0, "name3", "description3", creationDate, 1,file.getId()));
+        var candidate1 = sql2oCandidateRepository.save(new Candidate(0, "name1", "description1", creationDate, 1, file.getId()));
+        var candidate2 = sql2oCandidateRepository.save(new Candidate(0, "name2", "description2", creationDate, 1, file.getId()));
+        var candidate3 = sql2oCandidateRepository.save(new Candidate(0, "name3", "description3", creationDate, 1, file.getId()));
         var result = sql2oCandidateRepository.findAll();
         assertThat(result).isEqualTo(List.of(candidate1, candidate2, candidate3));
     }
