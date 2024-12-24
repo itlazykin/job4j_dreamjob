@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container-fluid p-0">
-    <header th:insert="blocks/header :: header"></header>
+    <header th:insert="~{blocks/header :: header}"></header>
     <div class="container">
         <div class="mb-3">
             <label for="name" class="form-label"><b>Имя</b></label>
@@ -25,7 +25,7 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
     </div>
-    <footer th:insert="blocks/footer :: footer"></footer>
+    <footer th:insert="~{blocks/footer :: footer}"></footer>
 </div>
 </body>
 </html>
