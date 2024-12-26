@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/register")
-    public String getRegistrationPage(Model model, HttpSession session) {
+    public String getRegistrationPage(Model model) {
         return "users/register";
     }
 

@@ -1,10 +1,8 @@
 package ru.job4j.dreamjob.controller;
 
-import jakarta.servlet.http.HttpSession;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +19,7 @@ public class FileController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable int id, HttpSession session, Model model) {
+    public ResponseEntity<?> getById(@PathVariable int id) {
         var contentOptional = fileService.getFileById(id);
         if (contentOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
