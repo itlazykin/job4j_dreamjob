@@ -71,8 +71,8 @@ public class Sql2oCandidateRepository implements CandidateRepository {
         try (var connection = sql2o.open()) {
             var query = connection.createQuery("SELECT * FROM candidates WHERE id = :id");
             query.addParameter("id", id);
-            var vacancy = query.setColumnMappings(Vacancy.COLUMN_MAPPING).executeAndFetchFirst(Candidate.class);
-            return Optional.ofNullable(vacancy);
+            var candidate = query.setColumnMappings(Candidate.COLUMN_MAPPING).executeAndFetchFirst(Candidate.class);
+            return Optional.ofNullable(candidate);
         }
     }
 
@@ -80,7 +80,7 @@ public class Sql2oCandidateRepository implements CandidateRepository {
     public Collection<Candidate> findAll() {
         try (var connection = sql2o.open()) {
             var query = connection.createQuery("SELECT * FROM candidates");
-            return query.setColumnMappings(Vacancy.COLUMN_MAPPING).executeAndFetch(Candidate.class);
+            return query.setColumnMappings(Candidate.COLUMN_MAPPING).executeAndFetch(Candidate.class);
         }
     }
 }
